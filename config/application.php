@@ -136,10 +136,11 @@ Config::define('FLYWP_API_KEY', env('FLYWP_API_KEY'));
 /**
  * Redis Settings
  */
-Config::define('WP_REDIS_HOST', 'redis');
-Config::define('WP_REDIS_PREFIX', env('WP_REDIS_PREFIX'));
-Config::define('WP_REDIS_DISABLE_BANNERS', true);
-Config::define('WP_REDIS_DISABLE_METRICS', true);
+Config::define('WP_REDIS_HOST', env('REDIS_HOST'));
+Config::define('WP_REDIS_PREFIX', env('REDIS_PREFIX'));
+Config::define('WP_REDIS_PASSWORD', [env('REDIS_USER'), env('REDIS_PASS')]);
+Config::define('WP_REDIS_DISABLE_BANNERS', 'true');
+Config::define('WP_REDIS_DISABLE_METRICS', 'true');
 
 /**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
