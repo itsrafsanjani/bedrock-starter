@@ -138,7 +138,7 @@ Config::define('FLYWP_API_KEY', env('FLYWP_API_KEY'));
  */
 Config::define('WP_REDIS_HOST', env('REDIS_HOST'));
 Config::define('WP_REDIS_PREFIX', env('REDIS_PREFIX'));
-Config::define('WP_REDIS_PASSWORD', [env('REDIS_USER'), env('REDIS_PASS')]);
+Config::define('WP_REDIS_PASSWORD', env('REDIS_USER') . ':' . env('REDIS_PASS'));
 Config::define('WP_REDIS_DISABLE_BANNERS', 'true');
 Config::define('WP_REDIS_DISABLE_METRICS', 'true');
 
